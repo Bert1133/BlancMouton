@@ -1896,6 +1896,53 @@
     .gi-3, .gi-4, .gi-5, .gi-6, .gi-7 { grid-column: span 1; grid-row: span 1; }
     .gi-1 { grid-row: span 2; }
     .gi-1 .gi-title { font-size: 26px; }
+
+    /* === Nav mobile : empêcher le bouton Soumission de déborder sur iPhone === */
+    .nav-inner { gap: 8px; }
+    .nav-cta { gap: 8px; }
+    .nav-cta .btn-primary {
+      padding: 10px 14px !important;
+      font-size: 12px !important;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+    .logo-text span { display: none; }
+    .logo-text strong { font-size: 15px; }
+    .logo-mark img { width: 36px; height: 36px; }
+  }
+
+  /* === Très petits écrans (iPhone SE, mini) === */
+  @media (max-width: 430px) {
+    .nav-cta .btn-primary {
+      padding: 9px 12px !important;
+      font-size: 11px !important;
+    }
+    .container { padding-left: 16px; padding-right: 16px; }
+    .hero h1 { font-size: clamp(40px, 11vw, 56px) !important; }
+  }
+
+  /* === Compression verticale globale sur mobile pour reduire le scroll === */
+  @media (max-width: 580px) {
+    .hero {
+      min-height: auto !important;
+      padding: 100px 0 50px !important;
+    }
+    .brand { padding: 60px 0 !important; }
+    .services,
+    .gallery,
+    .proof,
+    .why,
+    .testimonials { padding: 70px 0 !important; }
+    .zone { padding: 60px 0 !important; }
+    .cta { padding: 80px 0 !important; }
+    .section-head { margin-bottom: 32px !important; }
+    .brand-inner { gap: 36px !important; }
+    .hero-content { gap: 18px; }
+    .hero-stats { margin-top: 32px !important; }
+    /* Carte/temoignage : padding interne reduit */
+    .testimonial { padding: 22px !important; }
+    /* Galerie : hauteur de rangee plus petite */
+    .gallery-grid { grid-auto-rows: 170px !important; }
   }
 
   /* ===== REVEAL ON SCROLL ===== */
