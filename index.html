@@ -1944,6 +1944,38 @@
     .testimonial { padding: 22px !important; }
     /* Galerie : hauteur de rangee plus petite */
     .gallery-grid { grid-auto-rows: 170px !important; }
+
+    /* === Fix z-index du menu hamburger : doit passer au-dessus du contenu === */
+    .nav-mobile { z-index: 1000 !important; }
+
+    /* === Mobile : navigation par "pages" (tab-switching) === */
+    /* Par defaut sur la home, on cache toutes les sections de contenu */
+    .brand,
+    .proof,
+    #services,
+    #galerie,
+    #pourquoi,
+    #temoignages,
+    #soumission { display: none !important; }
+
+    /* Quand l'URL contient un hash de section, on affiche SEULEMENT cette section */
+    body[data-active-section="services"] #services,
+    body[data-active-section="galerie"] #galerie,
+    body[data-active-section="pourquoi"] #pourquoi,
+    body[data-active-section="temoignages"] #temoignages,
+    body[data-active-section="soumission"] #soumission { display: block !important; }
+
+    /* Et on cache le hero + le ribbon defilant quand on est sur une section */
+    body[data-active-section="services"] .hero,
+    body[data-active-section="services"] .ribbon,
+    body[data-active-section="galerie"] .hero,
+    body[data-active-section="galerie"] .ribbon,
+    body[data-active-section="pourquoi"] .hero,
+    body[data-active-section="pourquoi"] .ribbon,
+    body[data-active-section="temoignages"] .hero,
+    body[data-active-section="temoignages"] .ribbon,
+    body[data-active-section="soumission"] .hero,
+    body[data-active-section="soumission"] .ribbon { display: none !important; }
   }
 
   /* ===== REVEAL ON SCROLL ===== */
@@ -2787,6 +2819,21 @@
     menuBtn.addEventListener('click', () => navMobile.classList.toggle('open'));
     navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMobile.classList.remove('open')));
   }
+
+  // Mobile tab-switching : afficher une seule section a la fois sur mobile
+  // (sur desktop, le CSS n'applique pas ces regles, donc rien ne change)
+  function updateMobileSection() {
+    const valid = new Set(['services', 'galerie', 'pourquoi', 'temoignages', 'soumission']);
+    const hash = location.hash.slice(1);
+    document.body.dataset.activeSection = valid.has(hash) ? hash : '';
+    // Sur mobile, retourner en haut quand on change de section pour eviter un scroll bizarre
+    if (window.matchMedia('(max-width: 580px)').matches) {
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 0);
+    }
+  }
+  window.addEventListener('hashchange', updateMobileSection);
+  window.addEventListener('load', updateMobileSection);
+  updateMobileSection();
 
   // Scroll reveal
   const io = new IntersectionObserver((entries) => {
