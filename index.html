@@ -245,6 +245,7 @@
   .nav-phone svg { width: 14px; height: 14px; opacity: 0.7; }
 
   .menu-btn { display: none; }
+  .nav-mobile { display: none; }
 
   /* ===== HERO ===== */
   .hero {
@@ -1970,9 +1971,26 @@
         <span>(581) 990-3343</span>
       </a>
       <a href="#soumission" class="btn btn-primary" style="padding:12px 22px; font-size:14px;">Soumission gratuite</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <line x1="4" y1="7" x2="20" y2="7"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+      </button>
     </div>
   </div>
 </nav>
+
+<!-- ============ NAV MOBILE (drawer hamburger) ============ -->
+<div class="nav-mobile" id="navMobile" aria-label="Menu de navigation">
+  <a href="#services">Services</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#pourquoi">Pourquoi BlancMouton</a>
+  <a href="#temoignages">Témoignages</a>
+  <a href="#soumission">Soumission gratuite</a>
+  <a href="tel:+15819903343">📞 (581) 990-3343</a>
+</div>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
