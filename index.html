@@ -863,83 +863,6 @@
     margin-bottom: 20px;
   }
 
-  /* ===== PROOF SECTION (avant/après placeholder) ===== */
-  .proof {
-    padding: 120px 0;
-    background: var(--navy-900);
-    color: var(--cream-50);
-    position: relative;
-    overflow: hidden;
-  }
-  .proof::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 50% 50% at 80% 30%, rgba(160,127,58,0.15), transparent);
-    pointer-events: none;
-  }
-  .proof-inner { position: relative; }
-  .proof .section-head h2 { color: var(--cream-50); }
-  .proof .section-head .eyebrow { color: var(--blue-300); }
-  .proof .section-head p { color: rgba(245,237,216,0.7); }
-
-  .compare {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 40px;
-  }
-  .compare-card {
-    aspect-ratio: 4/3;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--line);
-  }
-  .compare-before {
-    background:
-      linear-gradient(135deg, #2d3540 0%, #4a5260 100%),
-      repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(0,0,0,0.05) 8px, rgba(0,0,0,0.05) 12px);
-    background-blend-mode: overlay;
-  }
-  .compare-after {
-    background:
-      linear-gradient(135deg, var(--blue-100) 0%, var(--cream-50) 100%);
-  }
-  .compare-card::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 100% 24px;
-  }
-  .compare-label {
-    position: absolute;
-    top: 20px; left: 20px;
-    background: rgba(10,31,61,0.85);
-    backdrop-filter: blur(10px);
-    color: var(--cream-50);
-    padding: 8px 16px;
-    border-radius: 999px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-  .compare-after .compare-label { background: var(--cream-50); color: var(--navy-900); }
-  .compare-photo-soon {
-    position: absolute; inset: 0;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 24px;
-  }
-  .compare-photo-soon span {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 18px;
-    opacity: 0.6;
-  }
-  .compare-after .compare-photo-soon span { color: var(--navy-900); opacity: 0.5; }
-
   /* ===== WHY BLANCMOUTON ===== */
   .why {
     padding: 120px 0;
@@ -1844,7 +1767,6 @@
     .services-grid { grid-template-columns: 1fr 1fr; }
     .why-grid { grid-template-columns: 1fr; gap: 48px; }
     .why-left { position: static; }
-    .compare { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .foot-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     .badge { right: 16px; bottom: 16px; }
@@ -1931,7 +1853,6 @@
     .brand { padding: 60px 0 !important; }
     .services,
     .gallery,
-    .proof,
     .why,
     .testimonials { padding: 70px 0 !important; }
     .zone { padding: 60px 0 !important; }
@@ -1951,7 +1872,6 @@
     /* === Mobile : navigation par "pages" (tab-switching) === */
     /* Par defaut sur la home, on cache toutes les sections de contenu */
     .brand,
-    .proof,
     #services,
     #galerie,
     #pourquoi,
@@ -2350,30 +2270,6 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Voir notre Facebook
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROOF / AVANT-APRÈS ============ -->
-<section class="proof">
-  <div class="container proof-inner">
-    <div class="section-head reveal">
-      <div>
-        <div class="eyebrow">Avant · Après</div>
-        <h2 class="h-display">La différence se voit, <em>simplement.</em></h2>
-      </div>
-      <p>Chaque mandat est documenté avant et après les travaux. Photos à venir — d'ici là, sachez que la qualité du résultat est ce qui fait que nos clients reviennent année après année.</p>
-    </div>
-
-    <div class="compare reveal">
-      <div class="compare-card compare-before">
-        <span class="compare-label">Avant</span>
-        <div class="compare-photo-soon"><span>Photos sur le terrain<br>à venir prochainement</span></div>
-      </div>
-      <div class="compare-card compare-after">
-        <span class="compare-label">Après</span>
-        <div class="compare-photo-soon"><span>Photos sur le terrain<br>à venir prochainement</span></div>
-      </div>
     </div>
   </div>
 </section>
@@ -3214,4 +3110,4 @@
 
 </body>
 </html>
-                                                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
